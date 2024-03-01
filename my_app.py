@@ -91,7 +91,7 @@ sched = BackgroundScheduler(daemon=True)
 sched.add_job(
     sensor,
     CronTrigger.from_crontab(
-        "0,15,30,45 9-15 * * 0-4", timezone=timezone("America/New_York")
+        "0,5,10,15,20,25,30,35,40,45,50,55 9-15 * * 0-4", timezone=timezone("America/New_York")
     ),
 )
 sched.add_job(
@@ -750,4 +750,4 @@ def update_live_chart(value, stock, expiration, active_page, refresh, toggle_dar
 
 
 if __name__ == "__main__":
-    app.run(debug=False, host="0.0.0.0", port="8050")
+    app.run(debug=False, host="0.0.0.0", port="80")
