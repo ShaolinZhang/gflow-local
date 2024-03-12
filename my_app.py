@@ -708,24 +708,24 @@ def update_live_chart(value, stock, expiration, active_page, refresh, toggle_dar
             modebar_remove=["autoscale"],
         )
 
-    # fig.update_xaxes(
-    #     title="Strike" if not date_condition else "Date",
-    #     showgrid=True,
-    #     range=(
-    #         [spot_price * 0.9, spot_price * 1.1]
-    #         if not date_condition
-    #         else (
-    #             [
-    #                 strikes[0] - timedelta(seconds=0.0625),
-    #                 strikes[0] + timedelta(seconds=0.0625),
-    #             ]
-    #             if len(strikes) == 1
-    #             else [today_ddt, today_ddt + timedelta(days=31)]
-    #         )
-    #     ),
-    #     gridwidth=1,
-    #     rangeslider=dict(visible=True),
-    # )
+    fig.update_xaxes(
+        title="Strike" if not date_condition else "Date",
+        showgrid=True,
+        range=(
+            [spot_price * 0.3, spot_price * 2.5]
+            if not date_condition
+            else (
+                [
+                    strikes[0] - timedelta(seconds=0.0625),
+                    strikes[0] + timedelta(seconds=0.0625),
+                ]
+                if len(strikes) == 1
+                else [today_ddt, today_ddt + timedelta(days=31)]
+            )
+        ),
+        gridwidth=1,
+        rangeslider=dict(visible=True),
+    )
     fig.update_yaxes(
         showgrid=True,
         fixedrange=True,
