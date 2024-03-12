@@ -712,7 +712,7 @@ def update_live_chart(value, stock, expiration, active_page, refresh, toggle_dar
         title="Strike" if not date_condition else "Date",
         showgrid=True,
         range=(
-            [spot_price * 0.3, spot_price * 2.5]
+            [spot_price * 0.5, spot_price * 1.5]
             if not date_condition
             else (
                 [
