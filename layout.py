@@ -63,7 +63,7 @@ def serve_layout():
                     id="tabs",
                     children=[
                         dbc.Tab(
-                            label=ticker_info[ticker]["longName"],
+                            label=ticker_info[ticker]["symbol"],
                             tab_id=f"{ticker[1:]}" if ticker[0] == "^" else ticker,
                         )
                         for ticker in tickers
